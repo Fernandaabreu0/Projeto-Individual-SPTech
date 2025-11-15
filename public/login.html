@@ -19,26 +19,25 @@
 
     <!--Header-->
 
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo">Entre Passos</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="index.html">Inicial</a>
-                </li>
-                <li>
-                    <a href="simulador.html">Simulador</a>
-                </li>
-                <li>|</li>
-                <li class="agora">
-                    <a href="#">Login</a>
-                </li>
-                <li>
-                    <a href="cadastro.html">Cadastro</a>
-                </li>
+    <header>
+        <div class="logo-header">
+            <h3>Entre Passos</h3>
+        </div>
+        <div class="nav-header">
+            <ul>
+                <li><a href="#logo-header">Home</a></li>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#representacao">Representação</a></li>
+                <li><a href="../../Calculadora/Calculadora financeira do grupo.html">Quiz</a></li>
             </ul>
         </div>
-    </div>
+        <div class="login-header">
+            <a href="../../web-data-viz/public/login.html"><button class="login-btn">Login</button></a>
+        </div>
+        <div class="login-header">
+            <a href="../../web-data-viz/public/cadastro.html"><button class="login-btn">Cadastro</button></a>
+        </div>
+    </header>
 
 
     <div class="login">
@@ -49,7 +48,7 @@
         </div>
         <div class="container">
             <div class="card card-login">
-                <h2>Olá de volta!</h2>
+                <h2>Entre em sua conta</h2>
                 <div class="formulario">
                     <div class="campo">
                         <span>E-mail:</span>
@@ -74,8 +73,8 @@
     <!--footer inicio-->
     <div class="footer">
         <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-            <span class="version">v1.0.0</span>
+            <h4>Copyright© 2025  | Entre Passos</h4>
+            <span class="version"></span>
         </div>
     </div>
     <!--footer fim-->
@@ -95,7 +94,7 @@
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "(Faltam campos para preencher)";
             finalizarAguardar();
             return false;
         }

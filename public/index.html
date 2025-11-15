@@ -2,76 +2,171 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Entre Passos | Página Inicial</title>
-
-    <script src="./js/sessao.js"></script>
-
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entre Passos</title>
+    <link rel="stylesheet" href="./css/header.css" />
+  
 </head>
 
 <body>
-    <div class="header">
-      <div class="container">
-        <h1 class="titulo">Entre Passos</h1>
-        <ul class="navbar">
-          <li class="agora">
-            <a href="#">Inicial</a>
-          </li>
-          <li>
-            <a href="simulador.html">Simulador</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
-          <li>
-            <a href="cadastro.html">Cadastro</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="banner">
-      <div class="container">
-        <p><b>O movimento por trás do ballet que encanta a plateia</b></p>
-      </div>
-    </div>
-  
-    <div class="social">
-      <h4>Como Funciona</h4>
-      <div class="container">
-        <div class="boxes">
-          <div class="box">
-            <img src="assets/imgs/planet-earth_color.png">
-            <h4>Criar um conta</h4>
-            <p>Crie uma conta </p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/lightbulb_color.png">
-            <h4>Criar </h4>
-            <p>Crie </p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/growth_color.png">
-            <h4>Análise </h4>
-            <p>Ao criar  </p>
-          </div>
+<!-- HEADER-->
+    <header>
+        <div class="logo-header">
+            <h3>Entre Passos</h3>
         </div>
-      </div>
+        <div class="nav-header">
+            <ul>
+                <li><a href="#logo-header">Home</a></li>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#representacao">Representação</a></li>
+                <li><a href="../../Calculadora/Calculadora financeira do grupo.html">Quiz</a></li>
+            </ul>
+        </div>
+        <div class="login-header">
+            <a href="../../web-data-viz/public/login.html"><button class="login-btn">Login</button></a>
+        </div>
+        <div class="login-header">
+            <a href="../../web-data-viz/public/cadastro.html"><button class="login-btn">Cadastro</button></a>
+        </div>
+    </header>
+
+    <!-- PRINCIPAL-->
+    <div class="home">
+        <div class="content-section-home-container">
+            <div class="titulo">
+                <label >A Elegância do Ballet</label>
+               
+            </div>
+            <div class="sub-titulo">
+                <p>
+                    O movimento por trás do Ballet que encanta a plateia
+                </p>
+            </div>
+            <div class="botao-home">
+                <a href="#sobre-nos"> <button class="btn-info">QUIZ</button></a>
+            </div>
+        </div>
     </div>
-  
-    <div class="footer">
-      <div class="container">
-        <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-        <span class="version">v1.0.0</span>
-      </div>
+    <div class="container-work">
+        <div class="section-title">
+            <h1>História do Ballet Clássico</h1>
+        </div>
+
+        <div id="historia" class="section-blocks-work">
+            <div class="section-cards-blocks-work">
+                <div class="section-cards">
+                    <img src="../public/assets/italia.png" alt="" />
+                    <h3>Início</h3>
+                    <p>
+                        O balé surgiu na Itália durante o período Renascentista, por volta do século XV. Se desenvolvendo a partir das festas da nobreza, como forma de entretenimento e expressão artística.
+                    </p>
+                </div>
+                <img src="../public/assets/Arrow 1.svg" alt="" class="arrow-icon">
+                <div class="section-cards">
+                    <img src="../public/assets/bailarina.png "alt="" />
+                    <h3>Registro</h3>
+                    <p>
+                        O ballet teve seu primeiro registro oficial em 1581, com a apresentação de “Le Ballet Comique de la Reine” em Paris, considerada o marco inicial dessa arte estruturada.
+                    </p>
+                </div>
+                <img src="../public/assets/Arrow 1.svg" alt="" class="arrow-icon">
+                <div class="section-cards">
+                    <img src="../public/assets/franca.png" alt="" />
+                    <h3>Crescimento</h3>
+                    <p>
+                        Mais tarde, o ballet se consolidou na França, onde ganhou força e se tornou a arte que conhecemos hoje, especialmente após a criação da Academia Real de Dança pelo rei Luís XIV, em 1661.
+                    </p>
+                </div>
+                <img src="../public/assets/Arrow 1.svg" alt="" class="arrow-icon">
+                <div class="section-cards">
+                    <img src="../assets/sapatilha.png" alt="" />
+                    <h3>Sapatilhas de Ponta</h3>
+                    <p>No século XIX, com o surgimento das sapatilhas de ponta, o Ballet evoluiu ainda mais, permitindo movimentos mais leves e expressivos.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-  </body>
+    <!-- CSS REPRESENTAÇÃO*/ -->
+
+    <div  id="representacao" class="sessao">
+        <div class="sub-sessao">
+            <h3>Representação Pessoal</h3>
+            <p>
+                O Ballet é uma forma única de expressão, sendo por meio do corpo a maneira como o público entende o que a alma esta sentindo, 
+                entre um movimento e outro o corpo da bailarina conversa lentamente com os espectadores e toca em um gesto suave cada um deles.
+                Foi exatamente isso que encontrei nessa dança, através dela entendi que poderia transformar meus sentimentos em movimento e silêncio em expressão. 
+                No palco, não precisa de palavras basta sentimentos e é nesse instante que o corpo passa a falar e a dança se torna uma extensão de quem eu sou.
+            </p>
+        </div>
+    </div>
+   <div class="lab">
+            <div class="sub-lab">
+                <div class="cards2">
+                    <h3>Dedicação</h3>
+                    <p>O ballet me ensinou que dedicação é transformar cada passo em aprendizado e cada desafio em evolução.
+                    </p>
+                    <div class="valores"> <img src="../public/assets/dedicacao.png "alt="" /></div>
+                </div>
+            
+                <div class="cards2">
+                    <h3>Sensibilidade</h3>
+                    <p>Por meio dele aprendi a respeitar meus limites, valorizar meu próprio ritmo e entender o que de fato é dançar.
+                    </p>
+                    <div class="valores"> <img src="../public/assets/sensibilidade.png"alt="" /></div>
+                </div>
+              
+                <div class="cards2">
+                    <h3>Constância</h3>
+                    <p>Através do ballet, aprendi que cada passo exige esforço, paciência e tempo. 
+                    É na constância dos treinos e na persistência diante das dificuldades que o verdadeiro progresso acontece.
+                    </p>
+                    <div class="valores"> <img src="../public/assets/constancia.png"alt="" /></div>
+                </div>
+               
+                <div class="cards2">
+                    <h3>ONU - Saúde e Bem-Estar</h3>
+                    <p>O projeto contribui para o objetivo 3 da ONU – Assegurar uma vida saudável e promover o bem-estar para todos, 
+                           em todas as idades. A prática do ballet envolve atividade física regular, consciência corporal, autodisciplina 
+                           e expressão emocional, promovendo saúde física e equilíbrio mental.
+                        </p>
+                    <div class="valores"> <img src="../public/assets/onu.png"alt="" /></div>
+                </div>
+            </div>
+        </div>
+        <div class="fotos">
+
+            <div class="foto1">
+                <div class="pessoais"> <img width="400px" src="../public/assets/foto2.jpeg"alt="" /></div>
+            </div>
+            <div class="foto2">
+                <div class="pessoais"> <img width="500px" src="../public/assets/foto1.jpeg"alt="" /></div>
+            </div>
+            <div class="foto3">
+                <div class="pessoais"> <img width="400px" src="../public/assets/foto3.jpeg"alt="" /></div>
+            </div>
+        
+        </div>
+
+
+        <div id="sobre-nos" class="container-calculator-card">
+            <div class="sub-container-calculator"> 
+                <div>
+                    Teste seus conhecimentos sobre ballet
+                
+                    <a href="../../Calculadora/Calculadora financeira do grupo.html"><button>QUIZ</button></a>
+                </div>
+
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <div class="copyright">
+              <p>Copyright© 2025  | Entre Passos</p>
+            </div>
+          </footer>
+    </body>
+    <script src="../src/js/validators/contact-validators.js"></script>
 
 </html>
