@@ -1,6 +1,620 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rouge+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+
+/*
+RESET CSS (ESTOU TIRANDO AS DEFINIÇÕES PADROES QUE O NAVEGADOR COLOCA DE ESTILO NO BODY DO CSS, ISSO ACARRETA EM PROBLEMAS DE LAYOUT)
+*/
+body{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    
+}
+
+
+/*CSS DO HEADER*/
+
+header {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  justify-content: space-evenly;
+}
+.nav-header {
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+.nav-header ul {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+  list-style: none;
+}
+.nav-header ul li a {
+  font-family: 'Poppins';
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 200ms;
+}
+.nav-header ul li a:hover {
+  color:  #803655;
+  font-size: 22px;
+}
+
+.logo-header h3{
+  color: #803655;
+font-family: 'Rouge Script';
+font-size: 60px;
+margin-left: 10px;
+margin-top: 5%;
+
+}
+
+
+.logo-header a img:hover {
+  width: 110%;
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 15%;
+}
+.login-btn {
+  padding: 0.5em 2em;
+  border-radius: 30px;
+  border: 0;
+  font-family: 'Poppins';
+  color: white;
+  font-size: 20px;
+  font-weight: normal;
+  background-color:  #803655;
+  transition: 200ms;
+}
+.login-btn:hover {
+  padding: 0.6em 2.2em;
+}
+
+   /* CSS PRINCIPAL */
+
+.home {
+  display: flex;
+  width: 100%;
+  background-color: black;
+  height: calc(100vh - 100px);
+  background-image: url('../assets/imgs/Login.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.content-section-home-container {
+  width: 50%;
+  height: 80%;
+  margin: 7% 0% 0% 5%;
+  display: flex;
+  flex-direction: column;
+}
+.titulo {
+  font-family: 'Rouge Script';
+  width: 90%;
+  color: rgb(0, 0, 0);
+  font-size: 110px;
+  padding-top: 100px;
+  
+}
+.sub-titulo {
+  color: rgb(2, 2, 2);
+  width: 90%;
+  font-weight: 200;
+  font-family: 'Poppins';
+  font-size: 27px;
+  font-weight:400;
+  
+}
+.botao-home {
+  width: 56%;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  height: 20%;
+}
+.btn-orc {
+  white-space: nowrap;
+  padding: 0.7em 2em;
+  background-color: transparent;
+  color: white;
+  font-family: 'Poppins';
+  border: 2px solid white;
+  border-radius: 25px;
+  font-size: 20px;
+  transition: 300ms;
+}
+.btn-orc:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 0.9em 2.3em;
+}
+.btn-info {
+  white-space: nowrap;
+  padding: 0.7em 2em;
+  background-color:  #803655;
+  color: white;
+  font-size: 20px;
+  font-family: 'Poppins';
+  border: 0;
+  border-radius: 25px;
+  transition: 100ms;
+}
+.btn-info:hover {
+  padding: 0.9em 2.3em;
+  cursor: pointer;
+}
+
+/*CSS REPRESENTAÇÃO*/
+.sessao{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center; 
+    background-color: #d48d8b57;
+
+}
+.sub-sessao{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    flex-direction: column;
+}
+.sub-sessao h3{
+    font-size: 80px;
+    font-family: 'Rouge Script';
+    color:  #803655;
+    text-align: center;
+    margin-bottom: 5px;
+   
+}
+.sub-sessao p{
+    font-family: 'Poppins';
+    font-size: 27px;
+    font-weight: 300;
+    text-align:justify;
+    justify-content: start;
+}
+
+/*COMO FUNCIONA*/
+
+.section-blocks-work{
+    width: 100%;
+    height: 50vh;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: 'Poppins';
+    font-weight: 300;
+}
+.section-cards{
+    width: 30%;
+    height: 70%;
+    border-radius: 30px;
+    background-color: #EFEFEF;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 20px 20px 20px;
+    font-weight: 300;
+ 
+}
+.section-cards-blocks-work{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+      
+}
+.arrow-icon{
+    width: 3%;
+    align-self: center;
+    text-align: center;
+}
+.section-title h1{
+    font-size: 80px;
+    text-align: center;
+    color: #803655;
+    font-family: 'Rouge Script';
+    margin-top: 3%;
+
+}
+
+.section-cards-blocks-work h3{
+    display: flex;
+    justify-content: center;
+    color: #d48d8b;
+    font-family: 'Poppins';
+    font-size: 20px;
+    
+ 
+
+}
+
+.section-cards p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    font-family: 'Poppins';
+}
+.section-cards img{
+    width: 30%;
+    height: 30%;
+   display: block;
+    margin: 0 auto;
+ 
+
+}
+
+
+
+.lab{
+    width: 100%;
+    height: 50vh;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: 'Poppins';
+    font-weight: 300;
+    margin-bottom: 5%;
+}
+.cards2{
+    width: 20%;
+    height: 75%;
+    border: 2px solid #803655;
+    flex-direction: column;
+    padding: 20px;
+    font-weight: 300;
+    border-radius: 10px;
+    position: relative; 
+    text-align: center;
+
+  
+ 
+}
+.sub-lab{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5%;
+  
+   
+
+}
+
+.valores img{
+    width: 50px;
+    position: absolute; 
+    top: 300px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 20px;
+}
+
+.container-mvv{
+    width: 100%;
+    height: 80vh;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    
+}
+.sub-container-mvv{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    
+}
+.block{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    
+}
+.block h3{
+    color: rgb(78, 35, 55);
+    font-family: 'Poppins';
+    font-size: 25px;
+}
+.block p{
+    width: 80%;
+    height: 80%;
+    margin-top: 0%;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-family: 'Poppins';
+    text-align: center;
+    
+}
+
+
+.block .caixa{
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+   
+}
+
+
+.block img{
+    width: 30%;
+}
+
+
+.fotos {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  background-color: #d48d8b57;
+
+}
+
+.pessoais img{
+  background-position:center;
+  display: flex;
+  flex-direction: row; 
+  border-radius: 40px;
+  
+}
+
+
+.container-calculator-card {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+   
+ 
+}
+
+.sub-container-calculator {
+  background-image: url("../assets/imgs/ballet.jpg");
+  background-position:center;
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  height: 100%;
+  color: #803655;
+  font-family: 'Rouge Script';
+  border-radius: 40px;
+  background-size: 100% 100%;
+  font-size: 70px;
+  padding-left: 50px;
+  font-weight: 800;
+  
+ 
+
+  
+}
+
+.sub-container-calculator div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 60%;
+    height: 80%;
+  
+}
+
+.sub-container-calculator div p{
+    text-align: baseline;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0;
+}
+.sub-container-calculator div button{
+    width: 9em;
+    height: 3em;
+    background-color: white;
+    border-radius: 20px;
+    border: 0;
+    font-family: 'Poppins';
+    transition: 200ms;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.footer {
+    background-color: #803655;
+    color: #fff;
+    padding: 20px 20px 20px;
+    font-family: "Poppins", sans-serif;
+    margin-top: 10%;
+  }
+ 
+
+  .copyright {
+    text-align: right;
+    border-top: 1px solid #1aa1a1;
+    padding-top: 10px;
+    font-size: 13px;
+    color: #ccc;
+  }
+
+/* LOGIN */
+
+.login {
+  height: var(--tamanho-login);
+  background-image: url('../assets/imgs/login1.png');
+  background-size: cover;
+  background-size: 100% 100%;
+    width: 100%;
+  height: 100vh; 
+ 
+}
+
+.login .container {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  
+}
+
+.card {
+  width: 50%;
+  background-color: #e5e5e58c;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  color: #803655;
+  flex-direction: column;
+  height: fit-content;
+  padding: 20px 0;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 50px;
+   color: #803655;
+  font-family: 'Rouge Script';
+}
+
+.formulario {
+  display: flex;
+  height: 90%;
+  width: 80%;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.formulario span {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.formulario input {
+  border: 2px solid rgb(148, 129, 145);
+  text-align: center;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.formulario select {
+  border: 2px solid rgb(148, 129, 145);
+  background-color: white;
+  color: gray;
+  height: 36px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 5px 0;
+}
+
+.botao {
+  cursor: pointer;
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  background-color: #ED145B;
+  width: 120px;
+  height: 30px;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.loading-div {
+  width: 50px;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+#div_erros_login {
+  display: none
+}
+
+/* ALERTA */
+
+#alerta {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.mensagem-alarme {
+  background-color: white;
+  border-radius: 5px;
+  width: 300px;
+  height: 80px;
+  margin: 10px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.mensagem-alarme h3 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.mensagem-alarme .informacao {
+  width: 66%;
+}
+
+.alarme-sino {
+  width: 48px;
+  height: 48px;
+  animation-name: bell;
+  animation-duration: 4s;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/1157/1157000.png');
+  background-size: cover;
+  animation-iteration-count: infinite;
+}
+
+/* CSS DE CADASTRO E LOGIN */
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rouge+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -29,7 +643,7 @@ header {
   justify-content: space-evenly;
 }
 .nav-header {
-  width: 70%;
+  width: 40%;
   display: flex;
   align-items: center;
 }
@@ -105,7 +719,7 @@ margin-top: 5%;
 
 .lateral{
   display: flex;
-  background-image: url('../assets/fundoA.jpg');
+  background-image: url('../assets/imgs/fundoA.jpg');
   width: 50%;
   height: 100%;
   border-radius: 10px;
@@ -212,7 +826,7 @@ margin-top: 5%;
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/login1.png');
+  background-image: url('../assets/imgs/login1.png');
   background-size: cover;
   background-size: 100% 100%;
     width: 100%;
