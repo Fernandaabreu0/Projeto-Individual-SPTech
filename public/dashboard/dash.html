@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./../css/quiz.css" />
+</head>
+
+<body>
+<div class="janelaInicial">
+
+     <div id="pontuacao" class="blocoinfo">
+            <div id="pontuacaoDuranteJogo" class="quantidade">
+                <span class="kpicertas">Quantidade de acertos: </span>
+                <span class="kpierradas">Quantidade de erros: </span>
+                  <span class="kpi">Quantidade de <br> tentativas realizadas: </span>
+                <span id="pontuacaoFinal" class="kpi">Pontuação Final:</span>
+            </div>
+        </div>
+
+  <div class="blocografico">
+        <canvas id="myChart"></canvas>
+    </div>   
+
+     <div class="header-left">
+            <h1>Entre Passos</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+        
+            <div class="btn-nav">
+                <a href="./quiz.html">
+                    <h3>Quiz</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav" onclick="verificar()">
+                <a href="./dash.html">
+                    <h3>Dash</h3>
+                </a>
+            </div>
+
+
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+      </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script>
+    const ctx = document.getElementById('myChart');
+
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Passos/Posições', 'História'],
+      datasets: [{
+        label: 'Temperatura Média',
+        data: [30, 90],
+        borderWidth: 3,
+        borderColor: '#36A2EB',
+        backgroundColor: '#9BD0F5',
+    
+      }, ]
+    }, 
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+function verificar() {
+    let acertos = localStorage.getItem("certas") || 0;
+    let erros = localStorage.getItem("erradas") || 0;
+
+    document.getElementById("kpicertas").innerHTML = `${certas} questões`;
+    document.getElementById("kpierradas").innerHTML = `${erradas} questões`;
+};
+
+</script>

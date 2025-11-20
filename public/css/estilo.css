@@ -1,6 +1,5 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rouge+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
 
 /*
 RESET CSS (ESTOU TIRANDO AS DEFINIÇÕES PADROES QUE O NAVEGADOR COLOCA DE ESTILO NO BODY DO CSS, ISSO ACARRETA EM PROBLEMAS DE LAYOUT)
@@ -611,15 +610,13 @@ margin-top: 5%;
 }
 
 /* CSS DE CADASTRO E LOGIN */
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rouge+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+  
 }
 
 :root {
@@ -994,17 +991,6 @@ input {
   width: 50px;
 }
 
-/* SIMULADOR */
-
-.simulador {
-  color: white;
-}
-
-.simulador .container {
-  flex-direction: column;
-  overflow: scroll; 
-  height: var(--tamanho-simulador);
-}
 
 /* ALERTA */
 
