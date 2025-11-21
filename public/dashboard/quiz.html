@@ -17,10 +17,7 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
-    <!-- scripts do Chart.js - 2022-1 -->
-
-    <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+   
 </head>
 
 <!-- <body onload=" atualizarFeed()"> -->
@@ -124,6 +121,7 @@
     const listaDeQuestoes = [
 
         {
+            tema: "1",
             pergunta: "Qual é essa posição no Ballet?",
             imagem: "../assets/imgs/passo5.png",
             alternativaA: "Terceira",
@@ -133,7 +131,7 @@
             alternativaCorreta: "alternativaB"
         },
 
-        {
+        {   tema: "1",
             pergunta: "Qual é o nome desse passo?",
             imagem: "../assets/imgs/echappe.gif",
             alternativaA: "Pás de Chat",
@@ -143,7 +141,7 @@
             alternativaCorreta: "alternativaD"
         },
 
-        {
+        {   tema: "1",
             pergunta: "Qual é o nome desse passo?",
             imagem: "../assets/imgs/pas-de-bourre.gif",
              alternativaA: "Pás de Chat",
@@ -153,7 +151,7 @@
             alternativaCorreta: "alternativaC"
         },
 
-        {
+        {   tema: "2",
             pergunta: "Qual dessas é uma caracterisca do Ballet de repertório?",
             imagem: "../assets/imgs/image.png",
             alternativaA: "Novas criações",
@@ -163,7 +161,7 @@
             alternativaCorreta: "alternativaB"
         },
 
-        {
+        {   tema: "2",
             pergunta: "Onde o ballet surgiu?",
             imagem: "../assets/imgs/surgiu.png",
             alternativaA: "Itália",
@@ -173,7 +171,7 @@
             alternativaCorreta: "alternativaA"
         },
 
-        {
+        {   tema: "2",
             pergunta: "Qual dessas não é uma caracteristicas que tem foco de desenvolvimento no Ballet?",
             imagem: "../assets/imgs/carac.png",
             alternativaA: "Leveza",
@@ -191,18 +189,73 @@
     let pontuacaoFinal = 0
     let tentativaIncorreta = 0
     let certas = 0
+    let certas1 = 0
+    let certas2 = 0
     let erradas = 0
+    let erradas1 = 0
+    let erradas2 = 0
     let quantidadeDeQuestoes = listaDeQuestoes.length
+    let tema1 = 1
+    let tema2 = 2
+    let idUser = sessionStorage.ID_USUARIO
+    console.log(idUser)
     // let isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
 
-    function onloadEsconder() {
-        document.getElementById('jogo').style.display = "none"
+
+
+    function enviarDados() {
+
+
+      // Enviando o valor da nova input
+    fetch("/dominio/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        certasServer: certas1,
+        erradasServer: erradas1,
+        pontuacaoFinalServer: pontuacaoFinal,
+        fkTemaServer: tema1,
+        fkUsuarioServer: idUser,
         
+      }),
+    })
+
+
+      // Enviando o valor da nova input
+    fetch("/dominio/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        certasServer: certas2,
+        erradasServer: erradas2,
+        pontuacaoFinalServer: pontuacaoFinal,
+        fkTemaServer: tema2,
+        fkUsuarioServer: idUser,
+        
+      }),
+    })
+    }
+
+   
+
+    function onloadEsconder() {
+        document.getElementById('pontuacao').style.display = "none"
+        document.getElementById('jogo').style.display = "none"
     }
 
     function iniciarQuiz() {
+        document.getElementById('pontuacao').style.display = "flex"
         document.getElementById('jogo').style.display = "flex"
         document.getElementById('btnIniciarQuiz').style.display = "none"
+
         document.getElementById('qtdQuestoes').innerHTML = quantidadeDeQuestoes
 
         preencherHTMLcomQuestaoAtual(0)
@@ -212,7 +265,6 @@
         // btnConcluir.disabled = true
         btnTentarNovamente.disabled = true
     }
-
     function preencherHTMLcomQuestaoAtual(index) {
         habilitarAlternativas(true)
         const questaoAtual = listaDeQuestoes[index]
@@ -226,7 +278,7 @@
         document.getElementById("labelOpcaoDois").innerHTML = questaoAtual.alternativaB;
         document.getElementById("labelOpcaoTres").innerHTML = questaoAtual.alternativaC;
         document.getElementById("labelOpcaoQuatro").innerHTML = questaoAtual.alternativaD;
-         document.getElementById("passo").style.display = "flex";
+       
     }
 
     function submeter() {
@@ -294,8 +346,8 @@
 
         options.forEach((option) => {
             if (option.value === respostaQuestaoAtual) {
-                console.log("alternativaCorreta está no componente: " + alternativaCorreta)
                 alternativaCorreta = option.labels[0].id
+                console.log("alternativaCorreta está no componente: " + alternativaCorreta)
             }
         })
 
@@ -303,19 +355,38 @@
         options.forEach((option) => {
             if (option.checked === true && option.value === respostaQuestaoAtual) {
                 document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
+                pontuacaoFinal++
+                certas++
                
+                if(listaDeQuestoes[numeroDaQuestaoAtual].tema == "1"){
+                    certas1++
+                }
+                else if(listaDeQuestoes[numeroDaQuestaoAtual].tema == "2"){
+                    certas2++
+                }
+
                 document.getElementById("spanCertas").innerHTML = certas
-                 localStorage.setItem("certas", certas);
                 numeroDaQuestaoAtual++
+                
+
             } else if (option.checked && option.value !== respostaQuestaoAtual) {
                 const wrongLabelId = option.labels[0].id
 
                 document.getElementById(wrongLabelId).classList.add("text-danger-with-bg")
                 document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
-                
+                tentativaIncorreta++
+                erradas++
+              
+                if(listaDeQuestoes[numeroDaQuestaoAtual].tema == "1"){
+                   erradas1++
+               }
+               else if(listaDeQuestoes[numeroDaQuestaoAtual].tema == "2"){
+                   erradas2++
+               }
+
                 document.getElementById("spanErradas").innerHTML = erradas
-                localStorage.setItem("erradas", erradas);
                 numeroDaQuestaoAtual++
+
             }
         })
     }
@@ -335,21 +406,47 @@
         }
     }
 
-      // Enviando o valor da nova input
-    fetch("/dominio/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        certasServer: certas,
-        erradasServer: erradas,
-        pontuacaoFinalServer: pontuacaoFinal,
-        
-      }),
-    })
+    function finalizarJogo() {
+        let textoParaMensagemFinal = null
+        let classComCoresParaMensagemFinal = null
+        const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
 
-   
+        if (porcentagemFinalDeAcertos <= 0.3) {
+            textoParaMensagemFinal = "Parece que você não estudou..."
+            classComCoresParaMensagemFinal = "text-danger-with-bg"
+        }
+        else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
+            textoParaMensagemFinal = "Pode melhorar na próxima, hein!"
+            classComCoresParaMensagemFinal = "text-warning-with-bg"
+        }
+        else if (porcentagemFinalDeAcertos >= 0.9) {
+            textoParaMensagemFinal = "Uau, parabéns!"
+            classComCoresParaMensagemFinal = "text-success-with-bg"
+        }
+
+        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos)*100) + "% das questões."
+
+
+        document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
+        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal) 
+        document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
+
+        document.getElementById('jogo').classList.add("text-new-gray") 
+
+        btnProx.disabled = true
+        btnSubmeter.disabled = true
+        // btnConcluir.disabled = true
+        btnTentarNovamente.disabled = false
+
+        enviarDados();
+        console.log(certas)
+
+         setTimeout(function () {
+                        window.location = "./dash.html"; 
+         }, 1000);
+
+    }
+
+
+
 </script>

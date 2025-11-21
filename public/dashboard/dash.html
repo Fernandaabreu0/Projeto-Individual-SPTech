@@ -80,11 +80,58 @@
     }
   });
 function verificar() {
-    let acertos = localStorage.getItem("certas") || 0;
-    let erros = localStorage.getItem("erradas") || 0;
+    let pontuacaoFinal = 0
+    let certas1 = 0
+    let certas2 = 0
+    let erradas1 = 0
+    let erradas2 = 0
+    let tema1 = 1
+    let tema2 = 2
+    let idUser = sessionStorage.ID_USUARIO
 
-    document.getElementById("kpicertas").innerHTML = `${certas} questões`;
-    document.getElementById("kpierradas").innerHTML = `${erradas} questões`;
-};
+
+    fetch("/dominio/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fkTemaServer: tema1,
+        fkUsuarioServer: idUser,
+        
+      }),
+    })
+
+    fetch("/dominio/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fkTemaServer: tema2,
+        fkUsuarioServer: idUser,
+        
+      }),
+    }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.ACERTOS_DOMINIO = json.acertos;
+                    sessionStorage.ERROS_DOMINIO = json.erros;
+                    sessionStorage.PONTUACAOFINAL_DOMINIO = json.pontuacaoFinal;
+                    sessionStorage.FKUSUARIO_DOMINIO = json.fkUsuario;
+                    
+                });
+            }
+        })
+    
+    document.getElementById("spankpicertas").innerHTML = `${certas1 + certas2} questões`;
+    document.getElementById("spankpierradas").innerHTML = `${erradas1 + erradas2} questões`;
+    }
 
 </script>
