@@ -30,8 +30,6 @@ create table dominio (
 	fkUsuario INT,
 	acertos int,
 	erros int,
-    pontuacaoFinal int,
-	porcentagemDominio Float,
 	constraint pkComposta
 		primary key (idDominio, fkTema, fkUsuario),
 	constraint fkTemaDominio

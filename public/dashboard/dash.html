@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="./../css/quiz.css" />
 </head>
 
-<body>
+<body onload="verificar()">
 <div class="janelaInicial">
 
      <div id="pontuacao" class="blocoinfo">
             <div id="pontuacaoDuranteJogo" class="quantidade">
-                <span class="kpicertas">Quantidade de acertos: </span>
-                <span class="kpierradas">Quantidade de erros: </span>
-                  <span class="kpi">Quantidade de <br> tentativas realizadas: </span>
+                <span id="certas" class="kpicertas">Quantidade de acertos:</span>
+                <span id="erradas" class="kpierradas">Quantidade de erros: </span>
+                  <span id="jogadas" class="kpi">Quantidade de <br> tentativas realizadas: </span>
                 <span id="pontuacaoFinal" class="kpi">Pontuação Final:</span>
             </div>
+            <span class="metricas">Temas de Domínio: <br> Pratico(passos/posições) - 3 questões<br> Cultura(história) - 3 questões</span>
         </div>
 
   <div class="blocografico">
@@ -37,7 +38,7 @@
                 </a>
             </div>
 
-            <div class="btn-nav" onclick="verificar()">
+            <div class="btn-nav">
                 <a href="./dash.html">
                     <h3>Dash</h3>
                 </a>
@@ -45,42 +46,55 @@
 
 
 
-            <div class="btn-logout" onclick="limparSessao()">
+            <div class="btn-logout">
                 <h3>Sair</h3>
       </div>
     </div>
+   
 </div>
 
 
 </body>
 </html>
 <script>
+
+          var dominio1 = Number(sessionStorage.CERTAS1_ATUAL) 
+         var dominio2 = Number(sessionStorage.CERTAS2_ATUAL)
+          console.log(dominio1)
+         console.log(dominio2)
+         
+         dominio1 = dominio1 * 100/6
+         dominio2 = dominio2 * 100/6
+
     const ctx = document.getElementById('myChart');
 
 
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Passos/Posições', 'História'],
+      labels: ['Prático', 'Cultura'],
       datasets: [{
-        label: 'Temperatura Média',
-        data: [30, 90],
+        label: 'Comparação de Domínio nos Temas',
+        data: [dominio1, dominio2],
         borderWidth: 3,
-        borderColor: '#36A2EB',
-        backgroundColor: '#9BD0F5',
+        borderColor: '#000000',
+        backgroundColor: '#803655',
+        
     
       }, ]
     }, 
     options: {
       scales: {
-        y: {
-          beginAtZero: true
-        }
+         y: {
+      beginAtZero: true,
+      max: 50,
+      min: 0
+    }
       }
     }
   });
+
 function verificar() {
-    let pontuacaoFinal = 0
     let certas1 = 0
     let certas2 = 0
     let erradas1 = 0
@@ -100,7 +114,29 @@ function verificar() {
         fkUsuarioServer: idUser,
         
       }),
-    })
+    }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    if(json.fkTema == 1){
+                      sessionStorage.ACERTOS_DOMINIO1 = json.acertos;
+                      sessionStorage.ERROS_DOMINIO1 = json.erros;
+                      sessionStorage.FKTEMA_DOMINIO1 = json.fkTema;
+
+                    } else if (json.fkTema == 2){
+                      sessionStorage.ACERTOS_DOMINIO2 = json.acertos;
+                      sessionStorage.ERROS_DOMINIO2 = json.erros;
+                      sessionStorage.FKTEMA_DOMINIO2 = json.fkTema;
+                    }
+                });
+            }
+        })
 
     fetch("/dominio/autenticar", {
       method: "POST",
@@ -121,17 +157,30 @@ function verificar() {
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-                    sessionStorage.ACERTOS_DOMINIO = json.acertos;
-                    sessionStorage.ERROS_DOMINIO = json.erros;
-                    sessionStorage.PONTUACAOFINAL_DOMINIO = json.pontuacaoFinal;
-                    sessionStorage.FKUSUARIO_DOMINIO = json.fkUsuario;
-                    
+
+                    if(json.fkTema == 1){
+                      sessionStorage.ACERTOS_DOMINIO1 = json.acertos;
+                      sessionStorage.ERROS_DOMINIO1 = json.erros;
+                      sessionStorage.FKTEMA_DOMINIO1 = json.fkTema;
+
+                    } else if (json.fkTema == 2){
+                      sessionStorage.ACERTOS_DOMINIO2 = json.acertos;
+                      sessionStorage.ERROS_DOMINIO2 = json.erros;
+                      sessionStorage.FKTEMA_DOMINIO2 = json.fkTema;
+                    }
                 });
             }
         })
-    
-    document.getElementById("spankpicertas").innerHTML = `${certas1 + certas2} questões`;
-    document.getElementById("spankpierradas").innerHTML = `${erradas1 + erradas2} questões`;
+        
+        console.log('CHEGOU')
+        var totalacertos = Number(sessionStorage.ACERTOS_DOMINIO2) + Number(sessionStorage.ACERTOS_DOMINIO1)
+        console.log(totalacertos)
+
+   document.getElementById("certas").innerHTML = `<br> Acertos: <br> (por jogada) <br> <br> ${Number(sessionStorage.CERTAS1_ATUAL) + Number(sessionStorage.CERTAS2_ATUAL)} <br> perguntas`;
+  document.getElementById("erradas").innerHTML = `<br>  Erros: <br>(por jogada)<br> <br>${Number(sessionStorage.ERRADAS1_ATUAL) + Number(sessionStorage.ERRADAS2_ATUAL)} <br> perguntas`;
+        document.getElementById("jogadas").innerHTML = `<br> Quantidade de vezes Jogadas: <br> <br>${Number(sessionStorage.JOGADAS_ATUAL)} <br>jogadas`;
+        document.getElementById("pontuacaoFinal").innerHTML = `<br> Total de Acertos:  <br> <br>${totalacertos}<br> acertos`;
+   
     }
 
 </script>

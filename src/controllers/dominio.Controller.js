@@ -2,12 +2,11 @@ var dominioModel = require("../models/dominioModel");
 
 
 function autenticar(req, res) {
-    var acertos = req.body.certasServer;
-    var erros = req.body.erradasServer;
-    var pontuacaoFinal = req.body.pontuacaoFinalServer;
+    var fkTema = req.body.fkTemaServer;
+    var fkUsuario = req.body.fkUsuarioServer
    
     
-        dominioModel.autenticar(acertos, erros, pontuacaoFinal)
+        dominioModel.autenticar(fkTema, fkUsuario)
             .then(function (resultadoAutenticar) {
                 console.log(`Resultados encontrados: ${resultadoAutenticar.length}`);
                 console.log(resultadoAutenticar);
@@ -16,7 +15,8 @@ function autenticar(req, res) {
                     res.json({
                         acertos: resultadoAutenticar[0].acertos,
                         erros: resultadoAutenticar[0].erros,
-                        pontuacaoFinal: resultadoAutenticar[0].pontuacaoFinal,
+                        fkTema: resultadoAutenticar[0].fkTema,
+                   
                     });
                 }
             })
@@ -26,23 +26,18 @@ function autenticar(req, res) {
                 res.status(500).json(erro.sqlMessage);
             });
 
-        }
-    
-    
-
-    
+        }    
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var acertos = req.body.certasServer;
     var erros = req.body.erradasServer;
-    var pontuacaoFinal = req.body.pontuacaoFinalServer;
     var fkTema = req.body.fkTemaServer;
     var fkUsuario = req.body.fkUsuarioServer;
    
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        dominioModel.cadastrar(acertos, erros, pontuacaoFinal, fkTema, fkUsuario)
+        dominioModel.cadastrar(acertos, erros, fkTema, fkUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);

@@ -1,19 +1,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rouge+Script&display=swap');
 
-/*
-RESET CSS (ESTOU TIRANDO AS DEFINIÇÕES PADROES QUE O NAVEGADOR COLOCA DE ESTILO NO BODY DO CSS, ISSO ACARRETA EM PROBLEMAS DE LAYOUT)
-*/
+
 body{
     margin: 0;
     box-sizing: border-box;
-    padding: 0;
-    
+    padding: 0;  
+}
+
+html {
+  scroll-behavior: smooth;
+    top: 1000;
+    behavior: "smooth";
 }
 
 
 /*CSS DO HEADER*/
-
 header {
   display: flex;
   width: 100%;
@@ -51,9 +53,7 @@ font-family: 'Rouge Script';
 font-size: 60px;
 margin-left: 10px;
 margin-top: 5%;
-
 }
-
 
 .logo-header a img:hover {
   width: 110%;
@@ -66,7 +66,7 @@ margin-top: 5%;
   height: 100%;
   width: 15%;
 }
-.login-btn {
+.botao-login {
   padding: 0.5em 2em;
   border-radius: 30px;
   border: 0;
@@ -77,12 +77,11 @@ margin-top: 5%;
   background-color:  #803655;
   transition: 200ms;
 }
-.login-btn:hover {
+.botao-login:hover {
   padding: 0.6em 2.2em;
 }
 
    /* CSS PRINCIPAL */
-
 .home {
   display: flex;
   width: 100%;
@@ -93,7 +92,7 @@ margin-top: 5%;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.content-section-home-container {
+.container-home {
   width: 50%;
   height: 80%;
   margin: 7% 0% 0% 5%;
@@ -117,7 +116,7 @@ margin-top: 5%;
   font-weight:400;
   
 }
-.botao-home {
+.botao-quiz {
   width: 56%;
   display: flex;
   gap: 30px;
@@ -157,14 +156,13 @@ margin-top: 5%;
   cursor: pointer;
 }
 
-/*CSS REPRESENTAÇÃO*/
+/*CSS REPRESENTAÇÃO INICIO*/
 .sessao{
     width: 100%;
-    height: 70vh;
+    height: 90vh;
     display: flex;
     justify-content: center; 
-    background-color: #d48d8b57;
-
+    background-color: #ddb9ca;
 }
 .sub-sessao{
     display: flex;
@@ -177,8 +175,7 @@ margin-top: 5%;
     font-family: 'Rouge Script';
     color:  #803655;
     text-align: center;
-    margin-bottom: 5px;
-   
+    margin-top: 0%;
 }
 .sub-sessao p{
     font-family: 'Poppins';
@@ -187,187 +184,146 @@ margin-top: 5%;
     text-align:justify;
     justify-content: start;
 }
+/*CSS REPRESENTAÇÃO FIM*/
 
-/*COMO FUNCIONA*/
 
-.section-blocks-work{
+
+/*CSS HISTORIA INICIO*/
+.historia{
+   background-image: url('../assets/imgs/_.gif');
+      background-size: cover;
     width: 100%;
-    height: 50vh;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    font-family: 'Poppins';
-    font-weight: 300;
-}
-.section-cards{
-    width: 30%;
-    height: 70%;
-    border-radius: 30px;
-    background-color: #EFEFEF;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 20px 20px 20px 20px;
-    font-weight: 300;
- 
-}
-.section-cards-blocks-work{
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100vh;
     
-      
 }
-.arrow-icon{
-    width: 3%;
-    align-self: center;
-    text-align: center;
-}
-.section-title h1{
+.historia h1{
     font-size: 80px;
     text-align: center;
     color: #803655;
     font-family: 'Rouge Script';
-    margin-top: 3%;
-
+    margin-top: 0%;
+  
 }
 
-.section-cards-blocks-work h3{
-    display: flex;
-    justify-content: center;
-    color: #d48d8b;
-    font-family: 'Poppins';
-    font-size: 20px;
-    
- 
-
-}
-
-.section-cards p{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    color: black;
-    font-size: 18px;
-    font-family: 'Poppins';
-}
-.section-cards img{
-    width: 30%;
-    height: 30%;
-   display: block;
-    margin: 0 auto;
- 
-
-}
-
-
-
-.lab{
+.container-historia{
     width: 100%;
-    height: 50vh;
+    height: 70vh;
     background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     font-family: 'Poppins';
-    font-weight: 300;
-    margin-bottom: 5%;
-}
-.cards2{
-    width: 20%;
-    height: 75%;
-    border: 2px solid #803655;
-    flex-direction: column;
-    padding: 20px;
-    font-weight: 300;
-    border-radius: 10px;
-    position: relative; 
-    text-align: center;
+       background-image: url('../assets/imgs/_.gif');
+      background-size: cover;   
 
+}
+.bloco-historia{
+    width: 40%;
+    height: 70%;
+    border-radius: 30px;
+    background-color: #EFEFEF;
+    
   
  
 }
-.sub-lab{
+.sessao-historia{
     width: 90%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 5%;
-  
-   
-
-}
-
-.valores img{
-    width: 50px;
-    position: absolute; 
-    top: 300px; 
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    padding: 20px;
-}
-
-.container-mvv{
-    width: 100%;
-    height: 80vh;
-    display: flex ;
     justify-content: center;
     align-items: center;
-    
 }
-.sub-container-mvv{
-    width: 90%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items:center;
-    
+.seta{
+    width: 3%;
+    align-self: center;
+    text-align: center;
 }
-.block{
+
+
+.sessao-historia h3{
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 20px 20px 20px;
-    
-}
-.block h3{
-    color: rgb(78, 35, 55);
+    color: #803655;
     font-family: 'Poppins';
     font-size: 25px;
-}
-.block p{
-    width: 80%;
-    height: 80%;
-    margin-top: 0%;
-    font-size: 18px;
-    color: rgb(0, 0, 0);
-    font-family: 'Poppins';
-    text-align: center;
-    
+  
 }
 
-
-.block .caixa{
- 
+.bloco-historia p{
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
     text-align: center;
-
-   
+    justify-items: center;
+    color: black;
+    font-size: 20px;
+    font-family: 'Poppins';
 }
-
-
-.block img{
+.bloco-historia img{
     width: 30%;
+    height: 30%;
+   display: block;
+    margin: 0 auto;
+}
+/*CSS HISTORIA INICIO*/
+
+
+
+/*CSS VALORES INICIO */
+.lab{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;  
+    align-items: start;
 }
 
+.values h3{
+    font-size: 90px;
+    color: #803655;
+    font-family: 'Rouge Script'; 
+    display: flex;
+    justify-content: center;
+    margin-top: 0%;
+    margin-bottom: -5%;
+}
 
+.imagem{
+ background-image: url('../assets/imgs/brilho.png');
+ background-position: center;
+ 
+}
+
+.cards2{
+    width: 23%;
+    height: 40%;
+    flex-direction: column;
+    position: relative; 
+  border-radius: 10px;
+  border: 1px solid white;
+  box-shadow: 0 0 15px #803655, 0 0 30px #803655;
+  background-color: #803655b2;
+  margin-top: 15%;
+}
+
+.cards2 p{
+  font-family: 'Poppins';
+  font-size: 20px;
+  font-weight:500;
+  color: white;
+  text-align: center;
+}
+
+.cards2 h3{
+  font-family: 'Poppins';
+  font-size: 25px;
+  font-weight:bold;
+  color: black;
+  text-align: center;
+}
+
+/*CSS VALORES FIM */
+
+
+/* CSS FOTOS INICIO*/
 .fotos {
   width: 100%;
   height: 100vh;
@@ -375,8 +331,8 @@ margin-top: 5%;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
-  background-color: #d48d8b57;
+  margin-bottom:0px;
+  background-color: #ddb9ca
 
 }
 
@@ -388,100 +344,186 @@ margin-top: 5%;
   
 }
 
+/*CSS FOTOS FIM */
 
-.container-calculator-card {
+/* CSS APRENDENOD UM POUCO MAIS INICIO*/
+.passos{
+     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   /* centraliza horizontalmente */
+    gap: 30px;                 /* espaço entre as divs */
+    margin:0px;
+   background-image: url('../assets/imgs/_.gif');
+      background-size: cover;
+     
+}
+  
+
+.sub-passos h3 {
+    font-size: 70px;
+    text-align: center;
+    color: #803655;
+    font-family: 'Rouge Script';
+    
+  
+}
+  
+.bloco{
+   width: 250px;
+    height: 120px;
+    background: #ddb9ca;
+    padding: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 5%;
+
+}
+
+  /* título sempre aparece */
+.bloco h3 {
+    margin: 12%;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Poppins';
+    color: black;
+
+}
+
+/* imagem começa invisível */
+.bloco .gif {
+    width: 100%;
+    margin-top: 15px;
+    opacity: 0;
+    transition: 0.4s ease;
+   
+}
+
+/* quando passar o mouse */
+.bloco:hover {
+    width: 550px;     /* aumenta */
+    height: 800px;
+   
+}
+
+.bloco:hover .gif {
+    opacity: 1;       /* gif aparece */
+}
+
+
+  .blocos-esquerda{
+   display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   /* centraliza horizontalmente */
+    gap: 500px;                 /* espaço entre as divs */
+    margin-top: 0%;
+  }
+
+  .blocos-direita{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   /* centraliza horizontalmente */
+    gap: 500px;                 /* espaço entre as divs */
+   
+  }
+  /* CSS APRENDENOD UM POUCO MAIS FIM*/
+
+/*CSS QUIZ SITE INICIO */
+.container-quiz {
   width: 100%;
   height: 80vh;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-   
- 
+  background-color: #ddb9ca;
+  margin-top: 0%;
+
 }
 
-.sub-container-calculator {
-  background-image: url("../assets/imgs/ballet.jpg");
+.container-quiz h3{
+    font-size: 60px;
+    text-align: center;
+    color: #803655;
+    font-family: 'Rouge Script';
+    width: 40%;
+   
+  
+}
+
+.teste {
+  background-image: url("../assets/imgs/ballet.gif");
   background-position:center;
-  width: 65%;
+  width: 50%;
   display: flex;
   flex-direction: row;
-  justify-content: start;
-  height: 100%;
-  color: #803655;
-  font-family: 'Rouge Script';
+  height: 80%;
   border-radius: 40px;
   background-size: 100% 100%;
   font-size: 70px;
   padding-left: 50px;
   font-weight: 800;
-  
- 
-
-  
 }
 
-.sub-container-calculator div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 60%;
-    height: 80%;
-  
-}
 
-.sub-container-calculator div p{
-    text-align: baseline;
-    font-size: 20px;
-    font-weight: 300;
-    margin: 0;
-}
-.sub-container-calculator div button{
-    width: 9em;
-    height: 3em;
-    background-color: white;
+.teste button{
+    width: 200px;
+    height: 80px;
+    background-color:  #ddb9ca;
     border-radius: 20px;
-    border: 0;
     font-family: 'Poppins';
-    transition: 200ms;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 30px;
+     box-shadow: 0 0 15px #803655, 0 0 30px #803655;
+     margin-top: 100%;
 }
+/*CSS QUIZ SITE FIM */
 
+
+
+/*CSS FOOTER INICIO */
 .footer {
     background-color: #803655;
     color: #fff;
-    padding: 20px 20px 20px;
+    padding: 32px 32px 32px;
     font-family: "Poppins", sans-serif;
-    margin-top: 10%;
   }
- 
 
   .copyright {
     text-align: right;
-    border-top: 1px solid #1aa1a1;
+    border-top: 2px solid #ccc;;
     padding-top: 10px;
-    font-size: 13px;
-    color: #ccc;
+    text-align: center;
+   
+   
   }
 
-/* LOGIN */
+ 
+/*CSS FOOTER FIM */
 
+
+
+
+/* CSS LOGIN */
 .login {
   height: var(--tamanho-login);
   background-image: url('../assets/imgs/login1.png');
   background-size: cover;
   background-size: 100% 100%;
     width: 100%;
-  height: 100vh; 
- 
+  
+
 }
 
 .login .container {
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  
+ 
 }
 
 .card {
@@ -490,11 +532,13 @@ margin-top: 5%;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   color: #803655;
   flex-direction: column;
   height: fit-content;
-  padding: 20px 0;
+  padding: 200px 400px;
+  align-items: center;
+ 
 }
 
 .card h2 {
@@ -510,10 +554,11 @@ margin-top: 5%;
   width: 80%;
   justify-content: space-around;
   flex-direction: column;
+ 
 }
 
 .formulario span {
-  font-size: 15px;
+  font-size: 30px;
   font-weight: 800;
 }
 
@@ -522,6 +567,7 @@ margin-top: 5%;
   text-align: center;
   border-radius: 10px;
   margin: 0;
+  font-size: 20px;
 }
 
 .formulario select {
@@ -609,320 +655,6 @@ margin-top: 5%;
   animation-iteration-count: infinite;
 }
 
-/* CSS DE CADASTRO E LOGIN */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rouge+Script&display=swap');
-
-body {
-  margin: 0;
-  padding: 0;
-  
-}
-
-:root {
-  --tamanho-header: 80px;
-  --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
-  --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
-  --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
-  --tamanho-footer: 65px;
-}
-
-.container {
-  display: flex;
-  width: 80%;
-  margin: auto;
-}
-
-header {
-  display: flex;
-  width: 100%;
-  height: 100px;
-  justify-content: space-evenly;
-}
-.nav-header {
-  width: 40%;
-  display: flex;
-  align-items: center;
-}
-.nav-header ul {
-  align-items: center;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  width: 100%;
-  list-style: none;
-}
-.nav-header ul li a {
-  font-family: 'Poppins';
-  color: black;
-  font-size: 20px;
-  text-decoration: none;
-  transition: 200ms;
-}
-.nav-header ul li a:hover {
-  color:  #803655;
-  font-size: 22px;
-}
-
-.logo-header h3{
- color: #803655;
-font-family: 'Rouge Script';
-font-size: 60px;
-margin-left: 10px;
-margin-top: 5%;
-
-}
-
-
-.logo-header a img:hover {
-  width: 110%;
-}
-
-.login-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 15%;
-}
-.login-btn {
-  padding: 0.5em 2em;
-  border-radius: 30px;
-  border: 0;
-  font-family: 'Poppins';
-  color: white;
-  font-size: 20px;
-  font-weight: normal;
-  background-color:  #803655;
-  transition: 200ms;
-}
-.login-btn:hover {
-  padding: 0.6em 2.2em;
-}
-
-/* BANNER */
-
-.banner{
-   display: flex;
-  flex-direction: row;
-  width: 100%;
-  margin-top: 0%;
-  height: 80vh;
-  padding-top: 0%;
-  padding: auto;
-  background-color:#EBEBEB;
-}
-
-
-.lateral{
-  display: flex;
-  background-image: url('../assets/imgs/fundoA.jpg');
-  width: 50%;
-  height: 100%;
-  border-radius: 10px;
-  padding-bottom: 0%;
-}
-.conteudo{
-  display: flex;
-  margin: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-bottom: 60px;
-  background-size: cover;
-  width: 900px;
-  height: 90vh;
-  border-radius: 20px;
-  justify-content: center; 
-  text-align: center;
-  align-items: center;
-  
-
-}
-.conteudo .p{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-
-}
-
-
-
-.social {
-    display: flex;
-  flex-direction: row;
-  width: 100%;
-  margin-top: 0%;
-  height: 80vh;
-  padding-top: 0%;
-  padding: auto;
-  background-color:#EBEBEB;
-  justify-content: center;
-
-}
-
-
-.container2{
-    display: flex;
-    width: 60%;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-.container2 p{
-    font-family: 'Poppins';
-    font-size: 24px;
-    font-weight: 300;
-
-}
-.principal {
-    display: flex;
-  flex-direction: row;
-  width: 100%;
-  margin-top: 0%;
-  height: 80vh;
-  padding-top: 0%;
-  padding: auto;
-  background-color:#EBEBEB;
-
-}
-.ponte {
-    display: flex;
-  flex-direction: row;
-  width: 100%;
-  margin-top: 0%;
-  height: 80vh;
-  padding-top: 0%;
-  padding: auto;
-  background-color:#EBEBEB;
-
-}
-
-
-/* FOOTER */
-
-.footer {
-  background-color: #d48d8b57;
-  display: flex;;
-  height: 100px;
-  color: #803655;
-  display: flex;
-  font-size: 15px;
-}
-
-.footer .container {
-  justify-content: center;
-  text-align: center;
-}
-
-.footer .container .version {
-  font-size: 12px;
-}
-
-/* LOGIN */
-
-.login {
-  height: var(--tamanho-login);
-  background-image: url('../assets/imgs/login1.png');
-  background-size: cover;
-  background-size: 100% 100%;
-    width: 100%;
-  height: 100vh; 
- 
-}
-
-.login .container {
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  
-}
-
-.card {
-  width: 50%;
-  background-color: #e5e5e58c;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  color: #803655;
-  flex-direction: column;
-  height: fit-content;
-  padding: 20px 0;
-}
-
-.card h2 {
-  margin: 0;
-  font-size: 50px;
-   color: #803655;
-  font-family: 'Rouge Script';
-}
-
-.formulario {
-  display: flex;
-  height: 90%;
-  width: 80%;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-.formulario span {
-  font-size: 15px;
-  font-weight: 800;
-}
-
-.formulario input {
-  border: 2px solid rgb(148, 129, 145);
-  text-align: center;
-  border-radius: 10px;
-  margin: 0;
-}
-
-.formulario select {
-  border: 2px solid rgb(148, 129, 145);
-  background-color: white;
-  color: gray;
-  height: 36px;
-  text-align: center;
-  border-radius: 10px;
-  margin: 0;
-}
-
-.campo {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  padding: 5px 0;
-}
-
-.botao {
-  cursor: pointer;
-  font-family: "Barlow", sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 18px;
-  color: #fff;
-  background-color: #ED145B;
-  width: 120px;
-  height: 30px;
-  align-self: center;
-  margin-top: 20px;
-}
-
-.loading-div {
-  width: 50px;
-  display: none;
-}
-
-.loading-div img {
-  height: 50px;
-  width: 50px;
-}
-
-#div_erros_login {
-  display: none
-}
 
 /* FORMULARIO */
 
@@ -991,50 +723,3 @@ input {
   width: 50px;
 }
 
-
-/* ALERTA */
-
-#alerta {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-
-.mensagem-alarme {
-  background-color: white;
-  border-radius: 5px;
-  width: 300px;
-  height: 80px;
-  margin: 10px;
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.mensagem-alarme h3 {
-  font-size: 14px;
-  margin: 0;
-}
-
-.mensagem-alarme .informacao {
-  width: 66%;
-}
-
-.alarme-sino {
-  width: 48px;
-  height: 48px;
-  animation-name: bell;
-  animation-duration: 4s;
-  background-image: url('https://cdn-icons-png.flaticon.com/512/1157/1157000.png');
-  background-size: cover;
-  animation-iteration-count: infinite;
-}
-
-@keyframes bell {
-  0%   {transform: rotate(25deg)}
-  25%  {transform: rotate(-25deg)}
-  50%  {transform: rotate(25deg)}
-  75%  {transform: rotate(-25deg)}
-  100% {transform: rotate(25deg)}
-}
