@@ -20,7 +20,7 @@ CREATE TABLE usuario (
 CREATE TABLE tema (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(45),
-	descricao VARCHAR(45),
+	descricao VARCHAR(100)
 
 );
 
@@ -43,5 +43,8 @@ create table dominio (
 
 
 insert into usuario (nome, email, senha) values 
-('Mirian', 'mirian@gmail.com', 'Mi123');
+('Fernanda', 'fernanda@gmail.com', 'F123');
 
+insert into tema (titulo, descricao) values
+('Pratica','São perguntas que envolvem assuntos sobre a prática do Ballet, como passos e posições'),
+('Cultura', 'São perguntas que envolvem assuntos sobre a história do Ballet');

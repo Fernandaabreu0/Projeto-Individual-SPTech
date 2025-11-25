@@ -1,7 +1,7 @@
+
 CREATE DATABASE aquatech;
 
 USE aquatech;
-
 
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -13,7 +13,7 @@ CREATE TABLE usuario (
 CREATE TABLE tema (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(45),
-	descricao VARCHAR(45)
+	descricao VARCHAR(100)
 
 );
 
@@ -23,8 +23,6 @@ create table dominio (
 	fkUsuario INT,
 	acertos int,
 	erros int,
-    pontuacaoFinal int,
-	porcentagemDominio Float,
 	constraint pkComposta
 		primary key (idDominio, fkTema, fkUsuario),
 	constraint fkTemaDominio
@@ -38,8 +36,8 @@ create table dominio (
 
 
 insert into usuario (nome, email, senha) values 
-('Mirian', 'mirian@gmail.com', 'Mi123');
+('Fernanda', 'fernanda@gmail.com', 'F123');
 
-select * from usuario;
-
-select * from dominio;
+insert into tema (titulo, descricao) values
+('Pratica','São perguntas que envolvem assuntos sobre a prática do Ballet, como passos e posições'),
+('Cultura', 'São perguntas que envolvem assuntos sobre a história do Ballet');
