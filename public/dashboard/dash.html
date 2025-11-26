@@ -62,9 +62,10 @@
          var dominio2 = Number(sessionStorage.CERTAS2_ATUAL)
           console.log(dominio1)
          console.log(dominio2)
+         var total = dominio1 + dominio2
          
-         dominio1 = dominio1 * 100/6
-         dominio2 = dominio2 * 100/6
+         var dominio1Porcent = dominio1 * 100/6
+         var dominio2Porcent = dominio2 * 100/6
 
     const ctx = document.getElementById('myChart');
 
@@ -74,8 +75,8 @@
     data: {
       labels: ['Prático', 'Cultura'],
       datasets: [{
-        label: 'Comparação de Domínio nos Temas',
-        data: [dominio1, dominio2],
+        label: 'Comparação de Domínio nos Temas (%)',
+        data: [dominio1Porcent, dominio2Porcent],
         borderWidth: 3,
         borderColor: '#000000',
         backgroundColor: '#803655',
@@ -95,12 +96,7 @@
   });
 
 function verificar() {
-    let certas1 = 0
-    let certas2 = 0
-    let erradas1 = 0
-    let erradas2 = 0
-    let tema1 = 1
-    let tema2 = 2
+   
     let idUser = sessionStorage.ID_USUARIO
 
 
@@ -110,7 +106,6 @@ function verificar() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        fkTemaServer: tema1,
         fkUsuarioServer: idUser,
         
       }),
@@ -123,20 +118,29 @@ function verificar() {
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-
-                    if(json.fkTema == 1){
-                      sessionStorage.ACERTOS_DOMINIO1 = json.acertos;
-                      sessionStorage.ERROS_DOMINIO1 = json.erros;
-                      sessionStorage.FKTEMA_DOMINIO1 = json.fkTema;
-
-                    } else if (json.fkTema == 2){
-                      sessionStorage.ACERTOS_DOMINIO2 = json.acertos;
-                      sessionStorage.ERROS_DOMINIO2 = json.erros;
-                      sessionStorage.FKTEMA_DOMINIO2 = json.fkTema;
-                    }
+                sessionStorage.ACERTOS_DOMINIO = json.acertos;
+                  
                 });
             }
+
+            verificar();
         })
+      
+
+   document.getElementById("certas").innerHTML = `<br> Acertos: <br> (por jogada) <br> <br> ${Number(sessionStorage.CERTAS1_ATUAL) + Number(sessionStorage.CERTAS2_ATUAL)} <br> perguntas`;
+  document.getElementById("erradas").innerHTML = `<br>  Erros: <br>(por jogada)<br> <br>${Number(sessionStorage.ERRADAS1_ATUAL) + Number(sessionStorage.ERRADAS2_ATUAL)} <br> perguntas`;
+  document.getElementById("jogadas").innerHTML = `<br> Quantidade de vezes Jogadas: <br> <br>${Number(sessionStorage.JOGADAS_ATUAL)} <br>jogadas`;
+  document.getElementById("pontuacaoFinal").innerHTML = `<br> Total de Acertos: <br> <br>${sessionStorage.ACERTOS_DOMINIO}<br> acertos`;
+   
+    }
+
+</script>
+
+<!--
+
+
+         var totalacertos = Number(sessionStorage.ACERTOS_DOMINIO2) + Number(sessionStorage.ACERTOS_DOMINIO1)
+      
 
     fetch("/dominio/autenticar", {
       method: "POST",
@@ -158,12 +162,7 @@ function verificar() {
                     console.log(json);
                     console.log(JSON.stringify(json));
 
-                    if(json.fkTema == 1){
-                      sessionStorage.ACERTOS_DOMINIO1 = json.acertos;
-                      sessionStorage.ERROS_DOMINIO1 = json.erros;
-                      sessionStorage.FKTEMA_DOMINIO1 = json.fkTema;
-
-                    } else if (json.fkTema == 2){
+                    if (json.fkTema == 2){
                       sessionStorage.ACERTOS_DOMINIO2 = json.acertos;
                       sessionStorage.ERROS_DOMINIO2 = json.erros;
                       sessionStorage.FKTEMA_DOMINIO2 = json.fkTema;
@@ -171,16 +170,7 @@ function verificar() {
                 });
             }
         })
-        
-        console.log('CHEGOU')
-        var totalacertos = Number(sessionStorage.ACERTOS_DOMINIO2) + Number(sessionStorage.ACERTOS_DOMINIO1)
-        console.log(totalacertos)
 
-   document.getElementById("certas").innerHTML = `<br> Acertos: <br> (por jogada) <br> <br> ${Number(sessionStorage.CERTAS1_ATUAL) + Number(sessionStorage.CERTAS2_ATUAL)} <br> perguntas`;
-  document.getElementById("erradas").innerHTML = `<br>  Erros: <br>(por jogada)<br> <br>${Number(sessionStorage.ERRADAS1_ATUAL) + Number(sessionStorage.ERRADAS2_ATUAL)} <br> perguntas`;
-        document.getElementById("jogadas").innerHTML = `<br> Quantidade de vezes Jogadas: <br> <br>${Number(sessionStorage.JOGADAS_ATUAL)} <br>jogadas`;
-        document.getElementById("pontuacaoFinal").innerHTML = `<br> Total de Acertos:  <br> <br>${totalacertos}<br> acertos`;
-   
-    }
 
-</script>
+
+-->

@@ -174,9 +174,8 @@ margin-top: 5%;
   
 .questoes{
     display: flex;
-    width: 65%;
-    height: 300vh;
-    margin: 5%;
+    width: 79%;
+    height: 400vh;
       justify-content: center;
      flex-direction: column;
      border: 4px solid white;
@@ -184,8 +183,9 @@ margin-top: 5%;
     text-align: center;
     align-items: center;
     font-family: 'Poppins';
-    padding: 0%;
-    font-size: 25px;
+    gap: 30px;
+    font-size: 35px;
+    color: white;
 }
 
 .passo img{
@@ -196,15 +196,17 @@ margin-top: 5%;
 }
 
 .botaoperguntas{
+  width: 100%;
+    height: 7vh;
   display: flex;
+  margin-bottom: 5%;
   background-color: white;
-  padding: 0.5em 3em;
   border-radius: 30px;
   font-family: 'Poppins';
-  font-size: 15px;
-    flex-direction: column; /* deixa os botões empilhados */
-    align-items: center;    /* centraliza horizontalmente */
-    justify-content: center; /* centraliza verticalmente se houver altura definida */
+  font-size: 25px;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
     gap: 10px;  
 
 

@@ -55,7 +55,7 @@
 
     <div id="pontuacaoEJogo" class="quiz">
        
-        <button id="btnIniciarQuiz" class="botaoinicio" onclick="iniciarQuiz()"><b>Regras:</b> <br> Este Quiz possui 6 questões <br> 3 sobre o Tema: Prática de Ballet(envolvendo passos e posições)  <br> 3 sobre o Tema: Cultura do Ballet(envolvendo sua história) <br> São pontuados seus acertos e erros sobre cada tema, além de suas quantidades de tentativas. <br> Bom Jogo! <br><br> <b>Inicar Quiz</b></button>
+        <button id="btnIniciarQuiz" class="botaoinicio" onclick="iniciarQuiz()"><b>Regras:</b> <br> Este Quiz possui 6 questões <br> 3 sobre o Tema: Prática de Ballet(envolvendo passos e posições)  <br> 3 sobre o Tema: Cultura do Ballet(envolvendo sua história) <br> São pontuados seus acertos, erros e tentativas. <br> Bom Jogo! <br><br> <b>Inicar Quiz</b></button>
 
      <div id="pontuacao" class="pontuacaoinicial">
             <div id="pontuacaoDuranteJogo" class="quantidade">
@@ -447,10 +447,9 @@
         sessionStorage.CERTAS2_ATUAL = certas2 
         sessionStorage.ERRADAS1_ATUAL = erradas1 
         sessionStorage.ERRADAS2_ATUAL = erradas2 
+       
 
         sessionStorage.JOGADAS_ATUAL = Number(sessionStorage.JOGADAS_ATUAL)+ 1
-        
-
         var teste = sessionStorage.JOGADAS_ATUAL
 
         if(isNaN(teste)){
@@ -460,7 +459,7 @@
          setTimeout(function () {
                         window.location = "./dash.html"; 
                         
-         }, 5000);
+         }, 1000);
 
     }
 

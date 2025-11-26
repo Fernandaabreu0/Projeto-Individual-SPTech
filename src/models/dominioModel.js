@@ -1,10 +1,9 @@
 var database = require("../database/config")
 
-function autenticar(fkTema, fkUsuario) {
+function autenticar(fkUsuario) {
     var instrucaoSql = `
-        SELECT sum(acertos) as acertos, sum(erros) as erros, fkTema FROM dominio
-        WHERE fkTema = '${fkTema}' AND fkUsuario = '${fkUsuario}'
-        GROUP BY '${fkTema}'`;
+        SELECT sum(acertos) as acertos FROM dominio
+        WHERE fkUsuario = '${fkUsuario};'`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

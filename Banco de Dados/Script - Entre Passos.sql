@@ -18,7 +18,7 @@ CREATE TABLE tema (
 );
 
 create table dominio (
-	idDominio INT,
+	idDominio INT auto_increment,
 	fkTema INT,
 	fkUsuario INT,
 	acertos int,
@@ -41,3 +41,12 @@ insert into usuario (nome, email, senha) values
 insert into tema (titulo, descricao) values
 ('Pratica','São perguntas que envolvem assuntos sobre a prática do Ballet, como passos e posições'),
 ('Cultura', 'São perguntas que envolvem assuntos sobre a história do Ballet');
+
+drop table usuario;
+
+select * from dominio;
+
+select * from usuario;
+
+
+INSERT INTO dominio (acertos, erros, fkTema, fkUsuario) VALUES ('1', '2', '1', '1');

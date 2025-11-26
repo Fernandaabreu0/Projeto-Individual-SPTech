@@ -86,7 +86,7 @@ margin-top: 5%;
   display: flex;
   width: 100%;
   background-color: black;
-  height: calc(100vh - 100px);
+  height: 90vh;
   background-image: url('../assets/imgs/Login.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -116,13 +116,7 @@ margin-top: 5%;
   font-weight:400;
   
 }
-.botao-quiz {
-  width: 56%;
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  height: 20%;
-}
+
 .btn-orc {
   white-space: nowrap;
   padding: 0.7em 2em;
@@ -179,8 +173,8 @@ margin-top: 5%;
 }
 .sub-sessao p{
     font-family: 'Poppins';
-    font-size: 27px;
-    font-weight: 300;
+    font-size: 32px;
+    font-weight: 400;
     text-align:justify;
     justify-content: start;
 }
@@ -294,9 +288,7 @@ margin-top: 5%;
 
 .cards2{
     width: 23%;
-    height: 40%;
-    flex-direction: column;
-    position: relative; 
+    height: 40%; 
   border-radius: 10px;
   border: 1px solid white;
   box-shadow: 0 0 15px #803655, 0 0 30px #803655;
@@ -346,7 +338,7 @@ margin-top: 5%;
 
 /*CSS FOTOS FIM */
 
-/* CSS APRENDENOD UM POUCO MAIS INICIO*/
+/* CSS ALGUNS PASSOS INICIO*/
 .passos{
      display: flex;
     flex-wrap: wrap;
@@ -354,8 +346,7 @@ margin-top: 5%;
     gap: 30px;                 /* espaço entre as divs */
     margin:0px;
    background-image: url('../assets/imgs/_.gif');
-      background-size: cover;
-     
+      background-size: cover; 
 }
   
 
@@ -369,15 +360,14 @@ margin-top: 5%;
 }
   
 .bloco{
+  /* transition para fazer a div abrir devagar e cursor para mudar o tipo dele quando passa */
    width: 250px;
     height: 120px;
     background: #ddb9ca;
     padding: 20px;
     border-radius: 20px;
-    overflow: hidden;
     transition: 0.4s ease;
     cursor: pointer;
-    position: relative;
     margin-bottom: 5%;
 
 }
@@ -397,27 +387,27 @@ margin-top: 5%;
 .bloco .gif {
     width: 100%;
     margin-top: 15px;
-    opacity: 0;
-    transition: 0.4s ease;
+    opacity: 0; /* não aparecer o gif antes da div abrir */
+    transition: 0.4s ease; 
    
 }
 
 /* quando passar o mouse */
 .bloco:hover {
-    width: 550px;     /* aumenta */
+    width: 550px;     /* o quando a div aumenta */
     height: 800px;
    
 }
 
 .bloco:hover .gif {
-    opacity: 1;       /* gif aparece */
+    opacity: 1;       /* para o gif aparecer */
 }
 
 
   .blocos-esquerda{
    display: flex;
     flex-wrap: wrap;
-    justify-content: center;   /* centraliza horizontalmente */
+    justify-content: center;  
     gap: 500px;                 /* espaço entre as divs */
     margin-top: 0%;
   }
@@ -425,11 +415,11 @@ margin-top: 5%;
   .blocos-direita{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;   /* centraliza horizontalmente */
-    gap: 500px;                 /* espaço entre as divs */
+    justify-content: center;   
+    gap: 500px;                 
    
   }
-  /* CSS APRENDENOD UM POUCO MAIS FIM*/
+  /* CSS ALGUNS PASSO FIM*/
 
 /*CSS QUIZ SITE INICIO */
 .container-quiz {

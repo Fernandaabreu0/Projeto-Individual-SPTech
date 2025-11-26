@@ -2,21 +2,18 @@ var dominioModel = require("../models/dominioModel");
 
 
 function autenticar(req, res) {
-    var fkTema = req.body.fkTemaServer;
     var fkUsuario = req.body.fkUsuarioServer
    
     
-        dominioModel.autenticar(fkTema, fkUsuario)
+        dominioModel.autenticar(fkUsuario)
             .then(function (resultadoAutenticar) {
                 console.log(`Resultados encontrados: ${resultadoAutenticar.length}`);
                 console.log(resultadoAutenticar);
 
-                if (resultadoAutenticar.length == 1) {
+                if (resultadoAutenticar.length > 0) {
                     res.json({
                         acertos: resultadoAutenticar[0].acertos,
-                        erros: resultadoAutenticar[0].erros,
-                        fkTema: resultadoAutenticar[0].fkTema,
-                   
+                
                     });
                 }
             })
